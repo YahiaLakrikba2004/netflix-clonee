@@ -2,9 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import SingleMovie from "./SingleMovie"; // Componente che visualizza le copertine dei film
+import SingleMovie from "./SingleMovie"; 
 
-const MovieSlider = ({ movies }) => {
+const MovieSlider = ({ movies, handleMovieSelect }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -13,17 +13,27 @@ const MovieSlider = ({ movies }) => {
     slidesToScroll: 1,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          dots: true
+        }
+      },
+      {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true
         }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false
         }
       }
     ]
@@ -34,7 +44,7 @@ const MovieSlider = ({ movies }) => {
       <Slider {...settings}>
         {movies.map((movie) => (
           <div key={movie.imdbID} className="movie-slide">
-            <SingleMovie img={movie.Poster} onClick={() => this.handleMovieSelect(movie)} />
+            <SingleMovie img={movie.Poster} onClick={() => handleMovieSelect(movie)} />
           </div>
         ))}
       </Slider>

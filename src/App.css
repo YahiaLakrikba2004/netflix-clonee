@@ -72,7 +72,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 50px;
 }
 
 .header-text {
@@ -88,7 +88,7 @@
 .genres-button {
   border: none !important;
   outline: none;
-  background-color: red !important;
+  background-color: #dc3545 !important;
   color: white;
   font-weight: bold;
   cursor: pointer;
@@ -114,12 +114,11 @@
   margin-bottom: 70px !important;
   object-fit: cover;
   margin: 15px;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .poster:hover {
-  transform: scale(
-    1.1
-  ); /* Ingrandisce leggermente l'immagine al passaggio del mouse */
   opacity: 1;
 }
 
@@ -191,21 +190,6 @@ h2 {
   color: #ffffff;
 }
 
-.modal-movie-info {
-  color: #000000;
-  font-size: 16px;
-  padding: 20px;
-}
-
-.modal-movie-info h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.modal-movie-info p {
-  margin-bottom: 8px;
-}
-
 .my-nav-bar {
   background-color: #282c34;
 }
@@ -228,8 +212,8 @@ h2 {
 /* Modal */
 .modal-movie-info {
   color: #000000;
-  font-size: 16px;
-  padding: 20px;
+  font-size: 25px;
+  padding: 60px;
 }
 
 .modal-movie-info h3 {
@@ -299,4 +283,37 @@ h2 {
 
 .slick-arrow:hover:not(:hover) {
   opacity: 0;
+}
+
+/* Respondive */
+
+/* Stili CSS per rendere il componente più responsivo */
+.slider-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-movie-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-movie-poster img {
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-movie-info {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 90% !important;
+  }
+
+  .modal-movie-details {
+    padding: 20px 20;
+  }
 }
