@@ -284,36 +284,3 @@ h2 {
 .slick-arrow:hover:not(:hover) {
   opacity: 0;
 }
-
-/* Respondive */
-
-/* Stili CSS per rendere il componente più responsivo */
-.slider-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.modal-movie-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.modal-movie-poster img {
-  max-width: 100%;
-  height: auto;
-}
-
-.modal-movie-info {
-  margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-  .modal-dialog {
-    max-width: 90% !important;
-  }
-
-  .modal-movie-details {
-    padding: 20px 20;
-  }
-}
